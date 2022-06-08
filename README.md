@@ -1,7 +1,18 @@
 # Learning Backward Compatible Embeddings
 
-This repo provides the source code for our KDD 2022 paper "Learning Backward Compatible Embeddings".
+This repo provides the source code for our [KDD 2022 paper](https://arxiv.org/abs/2206.03040) "Learning Backward Compatible Embeddings".
 Weihua Hu, Rajas Bansal, Kaidi Cao, Nikhil Rao, Karthik Subbian, Jure Leskovec.
+
+If you make use of the code/experiment in your work, please cite our paper (Bibtex below).
+
+```
+@inproceedings{hu2022learning,
+  title={Learning Backward Compatible Embeddings},
+  author={Hu, Weihua and Bansal, Rajas and Cao, Kaidi and Rao, Nikhil and Subbian, Karthik and Leskovec, Jure},
+  booktitle={Proceedings of the 28th ACM SIGKDD Conference on Knowledge Discovery \& Data Mining},
+  year={2022}
+}
+```
 
 **Problem formulation.** 
 The embedding team trains embedding model $M_0$ to solve their intended task $T$. The consumer teams may then utilize the produced embeddings $\{z_0\}$ to solve some unintended task $U_0$ using consumer model $C_0$. The issue arises when the embedding team releases new improved versions of the embedding model $M_1, M_2, \ldots$ over time. At version $k$, the latest-version embedding model $M_k$ produces ver-$k$ embeddings $\{z_k\}$ that are incompatible with consumer model $C_0$ that is trained on the ver-0 embeddings $\{z_0\}$. Our goal is to quickly transform the latest-version embedding $z_k$ into a backward compatible historical version of it so that existing consumer models can readily use the transformed embedding without being retrained.
