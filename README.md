@@ -15,7 +15,7 @@ If you make use of the code/experiment in your work, please cite our paper (Bibt
 ```
 
 **Problem formulation.** 
-The embedding team trains embedding model $M_0$ to solve their intended task $T$. The consumer teams may then utilize the produced embeddings $\{z_0\}$ to solve some unintended task $U_0$ using consumer model $C_0$. The issue arises when the embedding team releases new improved versions of the embedding model $M_1, M_2, \ldots$ over time. At version $k$, the latest-version embedding model $M_k$ produces ver-$k$ embeddings $\{z_k\}$ that are incompatible with consumer model $C_0$ that is trained on the ver-0 embeddings $\{z_0\}$. Our goal is to quickly transform the latest-version embedding $z_k$ into a backward compatible historical version of it so that existing consumer models can readily use the transformed embedding without being retrained.
+The embedding team trains embedding model $M_0$ to solve their intended task $T$. The consumer teams may then utilize the produced embeddings \{$z_0$\} to solve some unintended task $U_0$ using consumer model $C_0$. The issue arises when the embedding team releases new improved versions of the embedding model $M_1, M_2, \ldots$ over time. At version $k$, the latest-version embedding model $M_k$ produces ver-$k$ embeddings \{$z_k$\} that are incompatible with consumer model $C_0$ that is trained on the ver-0 embeddings \{$z_0$\}. Our goal is to quickly transform the latest-version embedding $z_k$ into a backward compatible historical version of it so that existing consumer models can readily use the transformed embedding without being retrained.
 
 
 <p align='center'>
@@ -24,7 +24,7 @@ The embedding team trains embedding model $M_0$ to solve their intended task $T$
 
 
 **Overview of our framework.**
-We train a new embedding model $M_k$ and a light-weight backward transformation function $B_k$ by optimizing the two training objectives simultaneously: (1) to solve the intended task $T$, and (2) to align ver-$k$ embeddings $\{z_k\}$ to ver-$k-1$ embeddings $\{z_{k-1}\}$ using $B_k$. We use the latest-version embedding model $M_k$ to produce embeddings $\{z_k\}$ and store them.
+We train a new embedding model $M_k$ and a light-weight backward transformation function $B_k$ by optimizing the two training objectives simultaneously: (1) to solve the intended task $T$, and (2) to align ver-$k$ embeddings \{$z_k$\} to ver-$k-1$ embeddings \{$z_{k-1}$\} using $B_k$. We use the latest-version embedding model $M_k$ to produce embeddings \{$z_k$\} and store them.
 For any existing consumer model $C_j$ requesting a ver-$j$ compatible embedding, we compose the learned backward transformations on-the-fly.
 
 
